@@ -2,7 +2,7 @@ import React from 'react';
 //css-in-js
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button'
-import { Navigate, useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { ResultData } from '../assets/data/resultData';
 
 const Result = () => {
@@ -23,7 +23,7 @@ const Result = () => {
             <Contents>
                 <Title>결과보기</Title>
                 <LogoImage>
-                    <img src={resultData.image} className="rounded-circle" width={350} height={350} />
+                    <img alt="결과 이미지" src={resultData.image} className="rounded-circle" width={350} height={350} />
                 </LogoImage>
                 <Desc>예비집사님과 찰떡궁합인 고양이는 {resultData.name}입니다!</Desc>
                 <Button style={{fontFamily: "SimKyungha"}} onClick={()=>navigate("/")}>테스트 다시하기</Button>
