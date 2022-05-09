@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Button from 'react-bootstrap/Button'
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { ResultData } from '../assets/data/resultData';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Result = () => {
     const navigate = useNavigate();    

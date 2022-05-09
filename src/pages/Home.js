@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import PangImage from '../assets/cat1.png';
 import Button from 'react-bootstrap/Button'
 import { useNavigate } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Home = () => {
     const navigate = useNavigate();

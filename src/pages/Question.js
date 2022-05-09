@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { ProgressBar, Button } from 'react-bootstrap';
 import { createSearchParams, useNavigate } from 'react-router-dom';
 import { QuestionData } from '../assets/data/questiondata';
