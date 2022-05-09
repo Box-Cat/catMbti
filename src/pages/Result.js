@@ -2,11 +2,20 @@ import React from 'react';
 //css-in-js
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button'
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate, useSearchParams } from 'react-router-dom';
 import { ResultData } from '../assets/data/resultData';
 
 const Result = () => {
     const navigate = useNavigate();    
+    const [searchParams] = useSearchParams();
+    const mbti = searchParams.get("mbti");
+    //최종적으로 도출한 결과 객체
+    const [resultData, setResultdata] = React.useState({});
+
+    React.useEffect(()=>{
+        const result = ResultData.find((s) => s.best === mbti);
+        setResultdata(result);
+    },[mbti])
 
     return (
         <Wrapper>
@@ -14,9 +23,9 @@ const Result = () => {
             <Contents>
                 <Title>결과보기</Title>
                 <LogoImage>
-                    <img src={ResultData[0].image} className="rounded-circle" width={350} height={350} />
+                    <img src={resultData.image} className="rounded-circle" width={350} height={350} />
                 </LogoImage>
-                <Desc>예비집사님과 찰떡궁합인 고양이는 {ResultData[0].name}입니다!</Desc>
+                <Desc>예비집사님과 찰떡궁합인 고양이는 {resultData.name}입니다!</Desc>
                 <Button style={{fontFamily: "SimKyungha"}} onClick={()=>navigate("/")}>테스트 다시하기</Button>
             </Contents>
         </Wrapper>
